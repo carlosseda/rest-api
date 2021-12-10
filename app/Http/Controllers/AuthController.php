@@ -42,6 +42,13 @@ class AuthController extends BaseController
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $token = $user->createToken('RestApi')->accessToken;
+
+        if($input['role'] == 'admin'){
+            $user->assignRole('admin');
+        }else{
+            $user->assignRole('user');
+        }
+        
         return $this->sendResponse($token);
     }
 
