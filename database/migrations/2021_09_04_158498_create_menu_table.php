@@ -22,9 +22,6 @@ class CreateMenuTable extends Migration
             $table->string('custom_url')->nullable();
             $table->integer('private')->nullable();
             $table->integer('order')->default(0);
-            $table->integer('menu_id')->unsigned();
-            $table->integer('locale_seo_id')->nullable(); 
-            $table->integer('locale_slug_seo_id')->nullable(); 
             $table->integer('parent_id')->nullable(); 
             $table->timestamps();
         });
