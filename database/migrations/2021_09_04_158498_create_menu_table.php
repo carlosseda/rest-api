@@ -28,10 +28,6 @@ class CreateMenuTable extends Migration
             $table->integer('parent_id')->nullable(); 
             $table->timestamps();
         });
-
-        Schema::table('t_menu_item', function($table) {
-            $table->foreign('menu_id')->references('id')->on('t_menu');
-        });
     }
 
     /**
