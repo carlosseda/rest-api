@@ -29,7 +29,9 @@ class ClientController extends BaseController
      */
     public function index()
     {
-        return $this->sendResponse(Client::all(), 'Clients retrieved successfully.');
+        $clients = User::select('id', 'name', 'vat_number', 'city')->get();
+
+        return $this->sendResponse($clients, 'Clients retrieved successfully.');
     }
 
     /**
