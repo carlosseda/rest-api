@@ -29,8 +29,8 @@ class UserController extends BaseController
      */
     public function index()
     {
-        $users = User::select('id', 'name', 'email', 'updated_at')->get();
-        
+        $users = User::select('id', 'name', 'email')->get();
+
         return $this->sendResponse($users, 'Users retrieved successfully.');
     }
 
