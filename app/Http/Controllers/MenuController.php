@@ -128,7 +128,7 @@ class MenuController extends BaseController
 
     public function displayMenu($menu_name)
     {
-        $menu = Menu::where('menu_name', $menu_name)->select('link_name', 'custom_url')->get();
+        $menu = Menu::where('menu_name', $menu_name)->select('link_name', 'custom_url', 'order')->orderBy('order')->get();
 
         return $this->sendResponse($menu, 'menu retrieved successfully.');
     }

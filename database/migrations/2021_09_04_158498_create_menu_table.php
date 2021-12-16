@@ -24,6 +24,7 @@ class CreateMenuTable extends Migration
             $table->integer('order')->default(0);
             $table->integer('parent_id')->nullable(); 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

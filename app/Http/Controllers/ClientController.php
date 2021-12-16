@@ -29,7 +29,7 @@ class ClientController extends BaseController
      */
     public function index()
     {
-        $clients = Client::select('id', 'name', 'vat_number', 'city')->get();
+        $clients = Client::select('id', 'name', 'vat_number', 'city')->paginate(10);
 
         return $this->sendResponse($clients, 'Clients retrieved successfully.');
     }
