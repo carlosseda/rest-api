@@ -29,7 +29,7 @@ class UserController extends BaseController
      */
     public function index()
     {
-        $users = User::select('id', 'name', 'email')->get();
+        $users = User::select('id', 'name', 'email')->paginate($this->paginate));
 
         return $this->sendResponse($users, 'Users retrieved successfully.');
     }
