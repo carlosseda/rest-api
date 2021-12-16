@@ -75,7 +75,7 @@ class UserController extends BaseController
 
         $result = User::with('roles')->where('id', $user->id)->firstOrFail();
 
-        return $this->sendResponse($result, 'User retrieved successfully.');
+        return $this->sendResponse($result, 'Usuario guardado correctamente.');
     }
 
     /**
