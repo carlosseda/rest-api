@@ -58,7 +58,7 @@ class UserController extends BaseController
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
-        return $this->sendResponse($user->toArray(), 'User created successfully.');
+        return $this->sendResponse($user->toArray(), 'Usuario guardado correctamente.');
     }
 
     /**
@@ -75,7 +75,7 @@ class UserController extends BaseController
 
         $result = User::with('roles')->where('id', $user->id)->firstOrFail();
 
-        return $this->sendResponse($result, 'Usuario guardado correctamente.');
+        return $this->sendResponse($result, 'User retrieved successfully.');
     }
 
     /**
