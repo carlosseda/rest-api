@@ -92,8 +92,6 @@ class UserController extends BaseController
         $validator = Validator::make($input, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id.',id',
-            'password' => 'required',
-            'c_password' => 'required|same:password',
         ]);
 
         if ($validator->fails()) {
@@ -102,7 +100,6 @@ class UserController extends BaseController
 
         $user->name = $input['name'];
         $user->email = $input['email'];
-        $user->password = bcrypt($input['password']);
         $user->save();
 
         return $this->sendResponse($user->toArray(), 'User updated successfully.');
