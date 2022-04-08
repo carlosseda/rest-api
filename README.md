@@ -1,43 +1,4 @@
-# RestAPI - Based on Laravel with Docker
-[![Build Status](https://travis-ci.com/nicp0nim/rest-api.svg?branch=master)](https://travis-ci.com/nicp0nim/rest-api)
-![Release](https://img.shields.io/github/release/nicp0nim/rest-api)
-![Code Size](https://img.shields.io/github/languages/code-size/nicp0nim/rest-api)
-![Last commit](https://img.shields.io/github/last-commit/nicp0nim/rest-api)
-[![License](https://img.shields.io/github/license/nicp0nim/rest-api)](https://github.com/nicp0nim/rest-api/blob/master/LICENSE)
-
-Laravel 6.0 Restful API boiler plate with:
-<small>
- - auth;
- - roles;
- - permissions; 
- - crud;
- - json responses;
- - phpunit and travis tests;
- - database seeder with factories;
- </small>
-
-## Requirements
-
-As it is build on the Laravel framework, it has a few system requirements.<br>
-Of course, all of these requirements are satisfied by the Docker, so it's highly recommended that you use Docker as
- your local Laravel development environment.
- 
-However, if you are not using Docker, you will need to make sure your server meets the following requirements:
-- PHP >= 7.1.3
-- MySql >= 5.7
-- Composer
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Mbstring PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
-- Ctype PHP Extension
-- JSON PHP Extension
-- BCMath PHP Extension
-
-You can check all the laravel related dependecies [here](https://laravel.com/docs/5.7/installation#server-requirements).
-
-## Install application.
+## Install application
 
 1. Clone repository and setup.<br>
 `git clone git@github.com:nicp0nim/rest-api.git`<br>
@@ -52,14 +13,7 @@ You can check all the laravel related dependecies [here](https://laravel.com/doc
 `docker exec php-fpm php artisan migrate:fresh --seed`<br>
 `docker exec php-fpm php artisan passport:install`<br>
 
-
-<small>This way is to setup app with docker, but if you want use it without docker just skip second step and replace
- from commands `docker exec php-fpm` part. For example 3 step without Docker should look like:<br>
- `composer install`</small>
-<br>
-
 ## API Endpoints and Routes
-Laravel follows the Model View Controller (MVC) pattern I have creatd models associated with each resource. You can check in the **routes/api.php** file for all the routes that map to controllers in order to send out JSON data that make requests to our API.
 
 ```
 +-----------+----------------------------+-----------------+--------------------------------------------------+--------------+
@@ -92,10 +46,6 @@ Laravel follows the Model View Controller (MVC) pattern I have creatd models ass
 +-----------+----------------------------+-----------------+--------------------------------------------------+--------------+
 ```
 
-## API Docs
-
-You can find full postman documentation with example success and error requests [here](https://documenter.getpostman.com/view/1946566/S11BzNAn?version=latest).
-
 #### Example login request
 
 ```bash
@@ -127,11 +77,3 @@ curl --location --request GET "http://localhost:8080/api/profile" \
   --data ""
 ```
 
-## Tests
-
-As default tests are configured to work with travis when you push commit to github repo.<br><br>
-If you want to run tests locally go to `phpunit.xml` file in root directory and change `DB_CONNECTION` value to `sqlite
-`.<br>
-Then as normally run command `./vendor/bin/phpunit`.<br><br>
-<small>Remember to change that value back for `testing` when you push repo to github, otherwize your commit test will
- fail.</small>
