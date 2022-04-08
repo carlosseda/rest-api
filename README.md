@@ -1,17 +1,17 @@
 ## Install application
 
 1. Clone repository and setup.<br>
-`git clone git@github.com:nicp0nim/rest-api.git`<br>
+`sudo git clone git@github.com:nicp0nim/rest-api.git`<br>
 `cd rest-api`<br>
-`cp .env.example .env`<br>
+`sudo cp .env.example .env`<br>
 2. Start docker.<br>
-`docker-compose up -d`
+`sudo docker-compose up -d`
 3. Install needed packages.<br>
-`docker exec php-fpm composer install`<br>
+`sudo docker exec php-fpm composer install`<br>
 4. Migrate, install passport and seed database with fake data.<br>
-`docker exec php-fpm php artisan key:generate`<br>
-`docker exec php-fpm php artisan migrate:fresh --seed`<br>
-`docker exec php-fpm php artisan passport:install`<br>
+`sudo docker exec php-fpm php artisan key:generate`<br>
+`sudo docker exec php-fpm php artisan migrate:fresh --seed`<br>
+`sudo docker exec php-fpm php artisan passport:install`<br>
 
 ## API Endpoints and Routes
 
