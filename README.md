@@ -8,6 +8,7 @@
 `sudo docker-compose up -d`
 3. Install needed packages.<br>
 `sudo docker exec php-fpm composer install`<br>
+`sudo docker exec php-fpm composer update`<br>
 4. Migrate, install passport and seed database with fake data.<br>
 `sudo docker exec php-fpm php artisan key:generate`<br>
 `sudo docker exec php-fpm php artisan migrate:fresh --seed`<br>
